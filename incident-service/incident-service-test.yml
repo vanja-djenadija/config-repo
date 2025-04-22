@@ -2,7 +2,7 @@ example:
   text: Test environment configuration
 
 server:
-  port: 80810
+  port: 8091
 
 spring:
   application:
