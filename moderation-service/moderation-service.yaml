@@ -6,8 +6,8 @@ spring:
     name: moderation-service
   datasource:
     url: jdbc:mysql://localhost:3306/moderation_db
-    username: "{cipher}d15d1fbecdf46db4fec2a408db21e04def44e0bed4a0c08cad965e94092c4614"
-    password: "{cipher}a9ee68f65d39aac190b148901de419ba3888210c98ceebdd3522d3a752f8855e"
+    username: {cipher}d15d1fbecdf46db4fec2a408db21e04def44e0bed4a0c08cad965e94092c4614
+    password: {cipher}a9ee68f65d39aac190b148901de419ba3888210c98ceebdd3522d3a752f8855e
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
