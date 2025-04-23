@@ -7,7 +7,7 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/incident_db
-    username: "{cipher}1f0b79cd1df1aa032f10961f5e5aa73ec6c520b22eaf2e40b7a44e2393c2ed52"
+    username: root
     password: "{cipher}344689a9f4d3676c77724bb5104dfa20ffad0d3d8b600c7675dacf180210cb8f"
 
   jpa:
