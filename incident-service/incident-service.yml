@@ -7,8 +7,8 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/incident_db
-    username: root
-    password: root
+    username: "{cipher}01aff1fdca5d3154c8c3a9a54736f74720111ac31f4ce14d5949ad318921f5ee"
+    password: "{cipher}30b4288b30b2795c84b8291accda94902c84f7b5e108e112076b4c4ca449874d"
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
