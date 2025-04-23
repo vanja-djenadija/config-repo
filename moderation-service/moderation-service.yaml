@@ -9,7 +9,6 @@ spring:
     username: root
     password: "{cipher}a9ee68f65d39aac190b148901de419ba3888210c98ceebdd3522d3a752f8855e"
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
 

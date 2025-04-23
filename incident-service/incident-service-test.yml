@@ -9,12 +9,10 @@ spring:
     name: incident-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/incident_db
     username: root
     password: root
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
 
