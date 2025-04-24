@@ -53,8 +53,6 @@ spring:
           uri: lb://nlp-service  # Koristi naziv servisa registrovan u Eureki
           predicates:
             - Path=/nlp/**
-          filters:
-            - StripPrefix=1
 
         - id: translation-service
           uri: lb://translation-service  # Koristi naziv servisa registrovan u Eureki
