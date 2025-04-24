@@ -4,66 +4,10 @@ server:
 spring:
   application:
     name: gateway-service
-  cloud:
-    gateway:
-      routes:
-        - id: incident-service
-          uri: lb://incident-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/incident/**
-          filters:
-            - StripPrefix=1
-
-        - id: moderation-service
-          uri: lb://moderation-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/moderation/**
-          filters:
-            - StripPrefix=1
-
-        - id: auth-service
-          uri: lb://auth-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/auth/**
-          filters:
-            - StripPrefix=1
-
-        - id: user-service
-          uri: lb://user-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/user/**
-          filters:
-            - StripPrefix=1
-
-        - id: analytics-service
-          uri: lb://analytics-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/analytics/**
-          filters:
-            - StripPrefix=1
-
-        - id: alert-service
-          uri: lb://alert-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/alert/**
-          filters:
-            - StripPrefix=1
-
-        - id: nlp-service
-          uri: lb://nlp-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/nlp/**
-
-        - id: translation-service
-          uri: lb://translation-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/translation/**
-          filters:
-            - StripPrefix=1
-
-        - id: map-service
-          uri: lb://map-service  # Koristi naziv servisa registrovan u Eureki
-          predicates:
-            - Path=/map/**
-          filters:
-            - StripPrefix=1
+  spring:
+    cloud:
+      gateway:
+        discovery:
+          locator:
+            enabled: true
+            lower-case-service-id: true
