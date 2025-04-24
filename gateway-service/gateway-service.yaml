@@ -10,10 +10,3 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-    routes:
-      - id: incident-service
-        uri: lb://incident-service  # Koristi naziv servisa iz Eureke
-        predicates:
-          - Path=/incident-service/**
-        filters:
-          - StripPrefix=1
