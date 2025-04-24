@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/moderation_db
     username: root
-    password: "{cipher}a9ee68f65d39aac190b148901de419ba3888210c98ceebdd3522d3a752f8855e"
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
