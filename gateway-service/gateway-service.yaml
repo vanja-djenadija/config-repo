@@ -9,14 +9,14 @@ spring:
       gateway:
         routes:
           - id: incident-service
-            uri: lb://INCIDENT-SERVICE
+            uri: lb://incident-service
             predicates:
               - Path=/incident-service/**
             filters:
               - StripPrefix=1
 
           - id: moderation-service
-            uri: lb://MODERATION-SERVICE
+            uri: lb://moderation-service
             predicates:
               - Path=/moderation-service/**
             filters:
