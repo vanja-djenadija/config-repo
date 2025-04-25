@@ -4,19 +4,3 @@ server:
 spring:
   application:
     name: gateway-service
-  cloud:
-    gateway:
-      routes:
-        - id: incident-service
-          uri: lb://INCIDENT-SERVICE
-          predicates:
-            - Path=/incident-service/**
-          filters:
-            - StripPrefix=1
-
-        - id: moderation-service
-          uri: lb://MODERATION-SERVICE
-          predicates:
-            - Path=/moderation-service/**
-          filters:
-            - StripPrefix=1
