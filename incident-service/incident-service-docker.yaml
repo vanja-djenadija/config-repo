@@ -1,0 +1,40 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: incident-service
+
+  datasource:
+    url: jdbc:mysql://mysql:3306/${INCIDENT_DB_NAME}
+    username: ${INCIDENT_DB_USER}
+    password: ${INCIDENT_DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# Uncomment if using AWS Secrets Manager
+#  config:
+#    import: optional:aws-secretsmanager:prod/incident-service-s3
+
+aws:
+  region: eu-north-1
+  bucketName: vanja-djenadija-incident-service-images
+
+rabbitmq:
+  host: rabbitmq
+  port: 5672
+  username: ${RABBITMQ_USER}
+  password: ${RABBITMQ_PASSWORD}
+  exchange: incident-exchange
+  queue-incident-created: incident-created-queue
+  queue-status-updated: status-updated-queue
+  routing-key-incident-created: incident.created
+  routing-key-status-updated: incident.status.updated
