@@ -30,9 +30,11 @@ aws:
 
 rabbitmq:
   host: rabbitmq
+
+
   port: 5672
-  username: ${RABBITMQ_USER}
-  password: ${RABBITMQ_PASSWORD}
+  username: guest
+  password: guest
   exchange: incident-exchange
   queue-incident-created: incident-created-queue
   queue-status-updated: status-updated-queue
