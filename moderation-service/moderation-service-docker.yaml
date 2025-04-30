@@ -5,7 +5,7 @@ spring:
   application:
     name: moderation-service
   datasource:
-    url: jdbc:mysql://mysql:3306/moderation_db
+    url: jdbc:mysql://mysql:3307/moderation_db
     username: root
     password: root
   jpa:
@@ -13,7 +13,7 @@ spring:
       ddl-auto: update
 
 rabbitmq:
-  host: localhost
+  host: rabbitmq
   port: 5672
   username: guest
   password: guest
@@ -22,3 +22,8 @@ rabbitmq:
   queue-status-updated: status-updated-queue
   routing-key-incident-created: incident.created
   routing-key-status-updated: incident.status.updated
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://discovery-server:8761/eureka/
