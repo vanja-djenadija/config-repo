@@ -6,9 +6,9 @@ spring:
     name: incident-service
 
   datasource:
-    url: jdbc:mysql://mysql:3306/${INCIDENT_DB_NAME}
-    username: ${INCIDENT_DB_USER}
-    password: ${INCIDENT_DB_PASSWORD}
+    url: jdbc:mysql://mysql:3306/incident_db
+    username: root
+    password: root
 
   jpa:
     hibernate:
