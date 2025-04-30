@@ -38,3 +38,9 @@ rabbitmq:
   queue-status-updated: status-updated-queue
   routing-key-incident-created: incident.created
   routing-key-status-updated: incident.status.updated
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+
