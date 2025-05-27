@@ -35,3 +35,13 @@ eureka:
     lease-expiration-duration-in-seconds: 10
     metadata-map:
       instanceId: ${spring.application.name}:${random.uuid}
+
+resilience4j.circuitbreaker:
+  instances:
+    incidentServiceCircuitBreaker:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10s
+      eventConsumerBufferSize: 10
