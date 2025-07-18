@@ -94,3 +94,15 @@ management:
   health:
     circuitbreakers:
       enabled: true
+      
+otel:
+  exporter:
+    otlp:
+      endpoint: http://otel-collector:4317
+      protocol: grpc
+  resource:
+    attributes:
+      service.name: ${spring.application.name}
+  traces:
+    sampler:
+      probability: 1.0  # 100% tracing
