@@ -52,6 +52,24 @@ resilience4j.circuitbreaker:
   configs:
     default:
       registerHealthIndicator: true
+      slidingWindowSize: 5
+      minimumNumberOfCalls: 3
+      failureRateThreshold: 50
+      waitDurationInOpenState: 5s
+      permittedNumberOfCallsInHalfOpenState: 2
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      recordExceptions:
+        - java.net.ConnectException
+        - java.net.NoRouteToHostException
+        - java.io.IOException
+        - org.springframework.web.reactive.function.client.WebClientRequestException
+        - org.springframework.web.reactive.function.client.WebClientResponseException
+  instances:
+    IncidentCircuitBreaker:
+      baseConfig: default
+    ModerationCircuitBreaker:
+      baseConfig: default
+
 
 management:
   endpoints:
