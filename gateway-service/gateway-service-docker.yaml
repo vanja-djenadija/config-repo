@@ -100,4 +100,4 @@ management:
           probability: 1.0 # Zipkin
   zipkin:
     tracing:
-      endpoint: http://zipkin:9411
+      endpoint:  http://zipkin:9411/api/v2/spans
