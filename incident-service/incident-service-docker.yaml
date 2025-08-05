@@ -51,3 +51,9 @@ eureka:
     lease-expiration-duration-in-seconds: 10
     metadata-map:
       instanceId: ${spring.application.name}:${random.uuid}
+
+# Zipkin
+management:
+  tracing:
+    sampling:
+      probability: 1.0
