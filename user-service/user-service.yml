@@ -1,0 +1,31 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+app:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    exchange: user-exchange
+    queue-admin-or-moderator-created: admin-or-moderator-created-queue
+    queue-role-updated: role-updated-queue
+    queue-user-created: user-created-queue
+    routing-key-admin-or-moderator-created: admin.moderator.created
+    routing-key-user-created: user.created
+    routing-key-role-updated: role.updated
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

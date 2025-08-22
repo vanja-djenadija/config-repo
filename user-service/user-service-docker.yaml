@@ -1,0 +1,31 @@
+server:
+  port: ${SERVICE_PORT}
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+app:
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: 5672
+    username: guest
+    password: guest
+    exchange: user-exchange
+    queue-admin-or-moderator-created: admin-or-moderator-created-queue
+    queue-role-updated: role-updated-queue
+    queue-user-created: user-created-queue
+    routing-key-admin-or-moderator-created: admin.moderator.created
+    routing-key-user-created: user.created
+    routing-key-role-updated: role.updated
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/

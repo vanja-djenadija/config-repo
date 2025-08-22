@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: ${SERVICE_PORT}
 
 spring:
   application:
@@ -23,35 +23,35 @@ spring:
             user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
             user-name-attribute: sub
   datasource:
-    url: jdbc:mysql://localhost:3306/auth_db
-    username: root
-    password: root
-  
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
   jpa:
     hibernate:
       ddl-auto: update
 
 jwt:
   key: ${JWT_KEY}
-  validity: 24
+  validity: ${JWT_VALIDITY}
 
 cookie:
-  domain: localhost
+  domain: ${COOKIE_DOMAIN}
   name: IS_MS
 rabbitmq:
-    host: localhost
+    host: ${RABBITMQ_HOST}
     port: 5672
     username: guest
     password: guest
     exchange: user-exchange
-    queue-admin-or-moderator-created: admin-or-moderator-created-queue
-    queue-role-updated: role-updated-queue
-    queue-user-created: user-created-queue
-    routing-key-admin-or-moderator-created: admin.moderator.created
-    routing-key-user-created: user.created
-    routing-key-role-updated: role.updated
+    queueAdminOrModeratorCreated: admin-or-moderator-created-queue
+    queueRoleUpdated: role-updated-queue
+    queueUserCreated: user-created-queue
+    routingKeyAdminOrModeratorCreated: admin.moderator.created
+    routingKeyUserCreated: user.created
+    routingKeyRoleUpdated: role.updated
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery-server:8761/eureka/
 

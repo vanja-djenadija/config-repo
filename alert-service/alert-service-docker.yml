@@ -1,0 +1,26 @@
+server:
+  port: ${SERVICE_PORT}
+
+spring:
+  application:
+    name: alert-service
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+rabbitmq:
+  host: ${RABBITMQ_HOST}
+  port: 5672
+  username: guest
+  password: guest
+  exchange-created: incident.created.exchange
+  queue-incident-created: alert-service.created.queue
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
