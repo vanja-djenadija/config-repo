@@ -5,7 +5,7 @@ spring:
   application:
     name: incident-service
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
+    url: jdbc:mysql://mysql:3306/incident_db
     username:  ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
