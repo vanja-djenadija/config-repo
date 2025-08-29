@@ -58,7 +58,7 @@ security:
     - /api/v1/auth/oauth2-login
     - /api/v1/auth/logout
     - /api/v1/auth/register
-    - /api/v1/incidents
+    - /api/v1/incidents/**
   authorize-endpoint: http://user-service/api/v1/users/authorize
   authentication-endpoint: http://auth-service/api/v1/auth/verify-token
 
