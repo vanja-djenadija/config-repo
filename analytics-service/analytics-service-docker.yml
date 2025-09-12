@@ -18,7 +18,7 @@ rabbitmq:
   username: guest
   password: guest
   exchange: incident-exchange
-  queue-incident-created: analytics-service.created.queue
+  queue-incident-created: analytics-service-created-queue
   routing-key-incident-created: incident.created
 eureka:
   client:
