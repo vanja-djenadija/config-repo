@@ -17,8 +17,9 @@ rabbitmq:
   port: 5672
   username: guest
   password: guest
-  exchange-created: incident.created.exchange
+  exchange: incident-exchange
   queue-incident-created: analytics-service.created.queue
+  routing-key-incident-created: incident.created
 eureka:
   client:
     service-url:
