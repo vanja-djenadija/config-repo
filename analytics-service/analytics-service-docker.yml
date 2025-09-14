@@ -18,8 +18,8 @@ rabbitmq:
   username: guest
   password: guest
   exchange: incident-exchange
-  queue-incident-created: analytics-service-created-queue
-  queue-status-updated: status-updated-queue
+  queue-incident-created: analytics-incident-created-queue
+  queue-status-updated: analytics-status-updated-queue
   routing-key-incident-created: incident.created
   routing-key-status-updated: incident.status.updated
 eureka:

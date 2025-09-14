@@ -33,7 +33,7 @@ rabbitmq:
   password: guest
   exchange: incident-exchange
   queue-incident-created: incident-created-queue
-  queue-status-updated: status-updated-queue
+  queue-status-updated: incident-status-updated-queue
   routing-key-incident-created: incident.created
   routing-key-status-updated: incident.status.updated
 
